@@ -74,7 +74,7 @@
         const sprite = new THREE.Sprite(material);
         sprite.position.x = 0;
         sprite.position.y = 0;
-        sprite.position.z = -100000;
+        sprite.position.z = -1000;
         sprite.scale.set(1000,700,-100);
         scene.add(sprite);
        
@@ -84,7 +84,7 @@
         mat1.map = texture1;
 
         var red = new THREE.Mesh(geometry, mat1);
-        red.position.set(-100, -100, -100);
+        red.position.set(-100, -100, 10);
         scene.add(red);
         
         var texture2 = textureLoader.load("img/pikatyuu.png");
