@@ -48,7 +48,7 @@
 
         // テクスチャー読み込み
         var textureLoader = new THREE.TextureLoader();  
-        var texture = textureLoader.load("monbo.png");
+        var texture = textureLoader.load("img/monbo.png");
         var mat = new THREE.MeshPhongMaterial();
         mat.map = texture;
 
@@ -62,7 +62,7 @@
         
         // バトル画面をスプライトで作成
         var textureLoader = new THREE.TextureLoader();  
-        var texture = textureLoader.load("haikei.png");
+        var texture = textureLoader.load("img/haikei.png");
         const material = new THREE.SpriteMaterial({ map: texture,});
 
         const sprite = new THREE.Sprite(material);
