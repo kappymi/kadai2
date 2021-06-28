@@ -77,27 +77,23 @@
         sprite.position.z = -100000;
         sprite.scale.set(1000,700,-100);
         scene.add(sprite);
+       
         
         var texture1 = textureLoader.load("img/red.png");
-        const material1 = new THREE.SpriteMaterial({ map: texture1,});
+        var mat1 = new THREE.MeshLambertMaterial({transparent: true});
+        mat1.map = texture1;
 
-        const sprite1 = new THREE.Sprite(material1);
-        sprite1.position.x = -100;
-        sprite1.position.y = -200;
-        sprite1.position.z = 100;
-        sprite1.scale.set(100,100,100);
-        scene.add(sprite1);
-        tick();
+        var red = new THREE.Mesh(geometry, mat1);
+        red.position.set(-100, -100, -100);
+        scene.add(red);
         
         var texture2 = textureLoader.load("img/pikatyuu.png");
-        const material2 = new THREE.SpriteMaterial({ map: texture2,});
+        var mat2 = new THREE.MeshLambertMaterial({transparent: true});
+        mat2.map = texture2;
 
-        const sprite2 = new THREE.Sprite(material2);
-        sprite2.position.x = 100;
-        sprite2.position.y = 100;
-        sprite2.position.z = -100;
-        sprite2.scale.set(100,100,100);
-        scene.add(sprite2);
+        var pikatyuu = new THREE.Mesh(geometry, mat2);
+        pikatyuu.position.set(100, 100, 100);
+        scene.add(pikatyuu);
 
         // 毎フレーム時に実行されるループイベントです
         function tick() {
