@@ -103,9 +103,10 @@
 
         const sprite3 = new THREE.Sprite(material3);
         sprite3.position.x = 250;
-        sprite3.position.y = 49;
+        sprite3.position.y = 0;
         sprite3.position.z = -100;
         sprite3.scale.set(100,100,100);
+        sprite3.rotation.set(10,0,0);
         scene.add(sprite3);
 
         tick();
