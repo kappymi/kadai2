@@ -98,16 +98,14 @@
         sprite2.scale.set(100,100,100);
         scene.add(sprite2);
         
-          var texture3 = textureLoader.load("img/asiba.png");
+         var texture3 = textureLoader.load("img/asiba.png");
         const material3 = new THREE.SpriteMaterial({ map: texture3,});
-
-        const sprite3 = new THREE.Sprite(material3);
-        sprite3.position.x = 230;
-        sprite3.position.y = -5;
-        sprite3.position.z = -100;
-        sprite3.scale.set(100,100,100);
-        sprite3.rotation.set(10,0,0);
-        scene.add(sprite3);
+        
+      var planeGeometry = new new THREE.PlaneGeometry(100,100);
+       var plane = new THREE.Meth(planeGeometry, material3);
+        plane.rotation.set(-Math.PI/2,0,0);
+        plane.position.set(250,0,-100)
+       
 
         tick();
         // 毎フレーム時に実行されるループイベントです
