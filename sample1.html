@@ -104,7 +104,8 @@
       var planeGeometry = new new THREE.PlaneGeometry(100,100);
        var plane = new THREE.Meth(planeGeometry, material3);
         plane.rotation.set(-Math.PI/2,0,0);
-        plane.position.set(250,0,-100)
+        plane.position.set(250,0,-100);
+        scene.add(plane);
        
 
         tick();
