@@ -67,16 +67,34 @@
         scene.add(monbo);
         
         // バトル画面をスプライトで作成
-        var textureLoader = new THREE.TextureLoader();  
-        var texture = textureLoader.load("img/haikei.jpeg");
-        const material = new THREE.SpriteMaterial({ map: texture,});
+        //var textureLoader = new THREE.TextureLoader();  
+        //var texture = textureLoader.load("img/haikei.jpeg");
+        //const material = new THREE.SpriteMaterial({ map: texture,});
 
-        const sprite = new THREE.Sprite(material);
-        sprite.position.x = 0;
-        sprite.position.y = 0;
-        sprite.position.z = -500;
-        sprite.scale.set(1000,700,-100);
-        scene.add(sprite);
+        //const sprite = new THREE.Sprite(material);
+        //sprite.position.x = 0;
+        //sprite.position.y = 0;
+        //sprite.position.z = -1000;
+        //sprite.scale.set(1000,700,-100);
+        //scene.add(sprite);
+        
+        var texture4 = textureLoader.load("img/haikei.png");
+        var mat4 = new THREE.MeshLambertMaterial({transparent: true});
+        mat4.map = texture4;
+
+         var haikei1 = new THREE.Mesh(geometry, mat4);
+        haikei1.position.set(0, 0, -500);
+        scene.add(haikei1);
+        
+        var haikei2 = new THREE.Mesh(geometry, mat4);
+        haikei2.position.set(0, 0, -500);
+        haikei2.rotation.set(0,PI/2,0);
+        scene.add(haikei2);
+        
+         var haikei3 = new THREE.Mesh(geometry, mat4);
+        haikei3.position.set(0, 0, -500);
+        haikei3.rotation.set(0,-PI/2,0);
+        scene.add(haikei3);
         
         var texture1 = textureLoader.load("img/red.png");
         const material1 = new THREE.SpriteMaterial({ map: texture1,});
@@ -103,7 +121,9 @@
         var material3 = new THREE.MeshPhongMaterial();
         material3.map = texture3;
         
-        
+        var bump = textureLoader.load("img/asiba.png");
+        material3.bumpMap = bump;
+        material3.bumpscale = 0.5;
         
       var planeGeometry = new THREE.PlaneGeometry(200,200);
        var plane = new THREE.Mesh(planeGeometry, material3);
