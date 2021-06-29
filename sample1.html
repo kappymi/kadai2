@@ -115,6 +115,16 @@
         plane.position.set(150,0,300);
         scene.add(plane);
        
+        var update = function() {
+      requestAnimationFrame(update);
+  
+      monbo.rotation.x += 0.01;
+      monbo.rotation.y += 0.01;
+  
+      renderer.render(scene, camera);
+    };
+    update();
+  }
 
         tick();
         // 毎フレーム時に実行されるループイベントです
