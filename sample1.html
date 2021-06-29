@@ -102,15 +102,12 @@
         
         var textureLoader = new THREE.TextureLoader();  
         var texture3 = textureLoader.load("img/asiba.png");
-        var material3 = new THREE.MeshPhongMaterial();
-        material3.map = texture3;
-        
-        
-      var planeGeometry = new THREE.PlaneGeometry(350,400);
-       var plane = new THREE.Mesh(planeGeometry, material3);
-        plane.rotation.set(-Math.PI/2,0,0);
-        plane.position.set(150,0,200);
-        scene.add(plane);
+        const material3 = new THREE.SpriteMaterial({ map: texture3,});
+
+        const sprite3 = new THREE.Sprite(material);
+        sprite3.rotation.set(-Math.PI/2,0,0);
+        sprite3.position.set(150,0,200);
+        scene.add(sprite3);
        
 
         tick();
