@@ -98,8 +98,14 @@
         sprite2.scale.set(100,100,100);
         scene.add(sprite2);
         
-         var texture3 = textureLoader.load("img/asiba.png");
-        const material3 = new THREE.SpriteMaterial({ map: texture3,});
+        var textureLoader = new THREE.TextureLoader();  
+        var texture3 = textureLoader.load("img/asiba.png");
+        var material3 = new THREE.MeshPhongMaterial();
+        material3.map = texture3;
+        
+        var bump = textureLoader.load("img/asiba.png");
+        material3.bumpMap = bump;
+        material3.bumpscale = 0.5;
         
       var planeGeometry = new THREE.PlaneGeometry(100,100);
        var plane = new THREE.Mesh(planeGeometry, material3);
