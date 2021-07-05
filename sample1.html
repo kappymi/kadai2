@@ -45,13 +45,6 @@
         // シーンに追加
         scene.add(directionalLight3);
 
-        // helper
-       const gridHelper = new THREE.GridHelper(200,50); // size, step
-       scene.add(gridHelper);
-
-       const axisHelper = new THREE.AxisHelper(200,50);
-       scene.add(axisHelper);
-
         // テクスチャー読み込み
         var textureLoader = new THREE.TextureLoader();  
         var texture = textureLoader.load("img/monbo.png");
@@ -99,17 +92,6 @@
         sprite2.position.z = 100;
         sprite2.scale.set(100,100,100);
         scene.add(sprite2);
-        
-        var textureLoader = new THREE.TextureLoader();  
-        var texture3 = textureLoader.load("img/asiba.png");
-        const material3 = THREE.MeshLambertMaterial({transparent: true});
-        material3.map = texture3;
-
-        var asiba = new THREE.Mesh(geometry, material3);
-        asiba.rotation.set(-Math.PI/2,0,0);
-        asiba.position.set(200,0,95);
-        asiba.scale.set(200,200,200);
-        scene.add(asiba);
        
 
         tick();
