@@ -102,13 +102,14 @@
         
         var textureLoader = new THREE.TextureLoader();  
         var texture3 = textureLoader.load("img/asiba.png");
-        const material3 = new THREE.SpriteMaterial({ map: texture3,});
+        const material3 = THREE.MeshLambertMaterial({transparent: true});
+        material3.map = texture3;
 
-        const sprite3 = new THREE.Sprite(material3);
-        sprite3.rotation.set(-Math.PI/2,0,0);
-        sprite3.position.set(200,0,95);
-        sprite3.scale.set(200,200,200);
-        scene.add(sprite3);
+        var asiba = new THREE.Mesh(geometry, material3);
+        asiba.rotation.set(-Math.PI/2,0,0);
+        asiba.position.set(200,0,95);
+        asiba.scale.set(200,200,200);
+        scene.add(asiba);
        
 
         tick();
